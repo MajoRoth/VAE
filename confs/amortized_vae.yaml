@@ -1,0 +1,14 @@
+model:
+  name: amortized_vae
+  latent_dimension: 200
+
+trainer:
+  lr: 0.001
+  epochs: 30
+  batch_size: 64
+
+
+
+
+
+

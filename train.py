@@ -12,7 +12,6 @@ import torchvision.transforms as transforms
 
 from trainers.trainer_getter import get_trainer
 from models.model_getter import get_model
-from trainer import Trainer
 from confs.conf_getter import get_conf
 
 
@@ -33,20 +32,6 @@ class IndexedDataset(Dataset):
             target_one_hot[idx] = 1
 
         return image, label, target_one_hot
-
-
-class IndexedMNIST(torchvision.datasets.MNIST):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        print(args)
-        self.data = self.data
-        self.num_samples = len(self.data)
-        self.train = train
-        print(f"len {self.num_samples}")
-
-    def __getitem__(self, index):
-        data, label = super(IndexedMNIST, self).__getitem__(index)
-
 
 
 
